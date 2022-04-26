@@ -1,0 +1,76 @@
+### Get all posts
+GET http://localhost:3000/api/post
+Accept: application/json
+
+<> 2022-04-20T100501.200.json
+<> 2022-04-20T100002.200.json
+<> 2022-04-20T095517.200.json
+<> 2022-04-20T095006.200.json
+
+### Get all posts with params
+GET http://localhost:3000/api/post?description=z
+Accept: application/json
+
+### Get post by ID
+GET http://localhost:3000/api/post/3
+Accept: application/json
+
+### Create post
+POST http://localhost:3000/api/post
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDQ2MzI0OSwiZXhwIjoxNjUwNDY2ODQ5fQ.zePgn1LseKqcCDnNG4iZj1ULxWIe3sBSKiHZF8DNpVjdTFxnPiBPeql1yhOb_h7TGeXNqdZfalBLU2J0hIxUkQ
+
+{
+  "imageUrl": "https://antitrustlair.files.wordpress.com/2013/02/post_danmark.jpg",
+  "description": "My Third Post",
+  "noComment": true
+}
+
+### Edit post
+PUT http://localhost:3000/api/post/6
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDQ4MDY1MCwiZXhwIjoxNjU0MDgwNjUwfQ.grA4cK85ma1Aw594_x0AKZC7xveBKZzehZJm2JzH1XrJ_YX3WyP1J0zn2VMHAkPGDuNc2MEZ-EvLMewO57Y7YQ
+
+{
+  "description": "My Third Post (edited)",
+  "noComment": false,
+  "id": 6
+}
+
+### Delete post
+DELETE http://localhost:3000/api/post/5
+Accept: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDQ2MzI0OSwiZXhwIjoxNjUwNDY2ODQ5fQ.zePgn1LseKqcCDnNG4iZj1ULxWIe3sBSKiHZF8DNpVjdTFxnPiBPeql1yhOb_h7TGeXNqdZfalBLU2J0hIxUkQ
+
+
+### Get list of comments of the post
+GET http://localhost:3000/api/post/1/comment
+Accept: application/json
+
+### Add new comment to post
+POST http://localhost:3000/api/post/6/comment
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDQ4MDY1MCwiZXhwIjoxNjU0MDgwNjUwfQ.grA4cK85ma1Aw594_x0AKZC7xveBKZzehZJm2JzH1XrJ_YX3WyP1J0zn2VMHAkPGDuNc2MEZ-EvLMewO57Y7YQ
+
+{
+  "comment": "gar"
+}
+
+### Delete comment from post
+DELETE http://localhost:3000/api/post/6/comment/10
+Accept: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDUwMzUzNCwiZXhwIjoxNjU0MTAzNTM0fQ.4D90Li2yZjYyjTS9eSJYyU_7vCTV7zxiy3ISa2vwwFxQwUOV0mR7sLhpjLvcNKjEqcvmDxdhIpjW64MmfWzZiw
+
+### Get list of votes of the post
+GET http://localhost:3000/api/post/6/vote
+Accept: application/json
+
+### Up vote post
+PATCH http://localhost:3000/api/post/1/vote/upVote
+Accept: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDUwMzUzNCwiZXhwIjoxNjU0MTAzNTM0fQ.4D90Li2yZjYyjTS9eSJYyU_7vCTV7zxiy3ISa2vwwFxQwUOV0mR7sLhpjLvcNKjEqcvmDxdhIpjW64MmfWzZiw
+
+### Down vote post
+PATCH http://localhost:3000/api/post/3/vote/downVote
+Accept: application/json
+Authorization: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiSGVnaSIsImxhc3ROYW1lIjoiR2pva2EiLCJlbWFpbCI6Imhnam9rYTE2QGdtYWlsLmNvbSIsInJvbGUiOjcsImlhdCI6MTY1MDUwMzUzNCwiZXhwIjoxNjU0MTAzNTM0fQ.4D90Li2yZjYyjTS9eSJYyU_7vCTV7zxiy3ISa2vwwFxQwUOV0mR7sLhpjLvcNKjEqcvmDxdhIpjW64MmfWzZiw
