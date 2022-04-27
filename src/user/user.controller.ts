@@ -52,7 +52,6 @@ export class UserController {
       data: user,
       result: null,
     };
-
   }
 
   @Post('signUp')
