@@ -62,7 +62,7 @@ var typeorm_1 = require("@nestjs/typeorm");
 var post_repository_1 = require("./post.repository");
 var environment_1 = require("../environment/environment");
 var typeorm_2 = require("typeorm");
-var PostService = /** @class */ (function () {
+var EventService = /** @class */ (function () {
     function PostService(postRepository) {
         this.postRepository = postRepository;
     }
@@ -112,4 +112,4 @@ var PostService = /** @class */ (function () {
     ], PostService);
     return PostService;
 }());
-exports.PostService = PostService;
+exports.PostService = EventService;

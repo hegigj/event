@@ -47,7 +47,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 exports.PostController = void 0;
 var common_1 = require("@nestjs/common");
-var PostController = /** @class */ (function () {
+var EventController = /** @class */ (function () {
     function PostController(commentController, postService) {
         this.commentController = commentController;
         this.postService = postService;
@@ -144,4 +144,4 @@ var PostController = /** @class */ (function () {
     ], PostController);
     return PostController;
 }());
-exports.PostController = PostController;
+exports.PostController = EventController;

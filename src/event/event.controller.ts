@@ -15,7 +15,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { FilterEventDto } from './dto/filter-event.dto';
-import { PostService } from './post.service';
+import { EventService } from './event.service';
 import { ResponseDto } from '../shared/dtos/response.dto';
 import { PageOfDto } from '../shared/dtos/page-of.dto';
 import { EventEntity } from './event.entity';
@@ -34,8 +34,8 @@ import { ListOfDto } from '../shared/dtos/list-of.dto';
 @ApiTags('Event')
 @ApiExtraModels(ResponseDto, PageOfDto, EventEntity)
 @Controller('event')
-export class PostController {
-  constructor(private readonly postService: PostService) {}
+export class EventController {
+  constructor(private readonly postService: EventService) {}
 
   @Get()
   @ApiCustomPaginatedResponse(EventEntity)

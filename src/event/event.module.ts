@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EventRepository } from './event.repository';
-import { PostController } from './post.controller';
-import { PostService } from './post.service';
+import { EventController } from './event.controller';
+import { EventService } from './event.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([EventRepository])],
-  controllers: [PostController],
-  providers: [PostService],
+  controllers: [EventController],
+  providers: [EventService],
 })
-export class PostModule {}
+export class EventModule {}

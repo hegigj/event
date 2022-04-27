@@ -16,7 +16,7 @@ import { prepareUser } from '../shared/utilities/prepare-user';
 import { ListOfDto } from '../shared/dtos/list-of.dto';
 
 @Injectable()
-export class PostService {
+export class EventService {
   constructor(
     @InjectRepository(EventRepository)
     private readonly postRepository: EventRepository,

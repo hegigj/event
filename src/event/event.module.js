@@ -10,11 +10,11 @@ exports.PostModule = void 0;
 var common_1 = require("@nestjs/common");
 var typeorm_1 = require("@nestjs/typeorm");
 var post_repository_1 = require("./post.repository");
-var post_controller_1 = require("./post.controller");
+var post_controller_1 = require("./event.controller");
 var comment_module_1 = require("../comment/comment.module");
 var vote_module_1 = require("../vote/vote.module");
-var post_service_1 = require("./post.service");
-var PostModule = /** @class */ (function () {
+var post_service_1 = require("./event.service");
+var EventModule = /** @class */ (function () {
     function PostModule() {
     }
     PostModule = __decorate([
@@ -24,10 +24,10 @@ var PostModule = /** @class */ (function () {
                 comment_module_1.CommentModule,
                 vote_module_1.VoteModule,
             ],
-            controllers: [post_controller_1.PostController],
-            providers: [post_service_1.PostService]
+            controllers: [post_controller_1.EventController],
+            providers: [post_service_1.EventService]
         })
     ], PostModule);
     return PostModule;
 }());
-exports.PostModule = PostModule;
+exports.PostModule = EventModule;
