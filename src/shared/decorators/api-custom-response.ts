@@ -10,7 +10,7 @@ export const ApiCustomResponse = <MODEL extends Type>(model: MODEL) => {
           { $ref: getSchemaPath(ResponseDto) },
           {
             properties: {
-              data: { type: 'object', items: { $ref: getSchemaPath(model) } },
+              data: { type: 'object', $ref: getSchemaPath(model) },
             },
           },
         ],
