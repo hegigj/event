@@ -1,5 +1,5 @@
-import { UserEntity } from "../../user/user.entity";
-import { UserDto } from "../../user/dto/user.dto";
+import { UserEntity } from '../../user/user.entity';
+import { UserDto } from '../../user/dto/user.dto';
 
 export function prepareUser(user: UserDto): UserEntity | undefined {
   if (!user) return undefined;

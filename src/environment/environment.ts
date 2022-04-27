@@ -10,7 +10,6 @@ export const environment = {
   },
   jwt: {
     algorithm: 'HS512',
-    secret: 'thoma.KARAKASHI_2022@ikubinfo.al',
+    secret: 'jurgen.LUBONJA_2022@ikubinfo.al',
   },
-  pageSize: 10,
 };

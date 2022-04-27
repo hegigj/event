@@ -1,8 +1,8 @@
-import { applyDecorators, Type } from "@nestjs/common";
-import { ApiResponse, getSchemaPath } from "@nestjs/swagger";
-import { ResponseDto } from "../dtos/response.dto";
+import { applyDecorators, Type } from '@nestjs/common';
+import { ApiResponse, getSchemaPath } from '@nestjs/swagger';
+import { ResponseDto } from '../dtos/response.dto';
 
-export const ApiCustomResponse = <MODEL extends Type<any>>(model: MODEL) => {
+export const ApiCustomResponse = <MODEL extends Type>(model: MODEL) => {
   return applyDecorators(
     ApiResponse({
       schema: {
@@ -10,11 +10,11 @@ export const ApiCustomResponse = <MODEL extends Type<any>>(model: MODEL) => {
           { $ref: getSchemaPath(ResponseDto) },
           {
             properties: {
-              data: { type: 'object', items: { $ref: getSchemaPath(model) } }
-            }
-          }
-        ]
-      }
-    })
+              data: { type: 'object', $ref: getSchemaPath(model) },
+            },
+          },
+        ],
+      },
+    }),
   );
 };

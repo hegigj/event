@@ -1,11 +1,9 @@
 import { applyDecorators, Type } from '@nestjs/common';
 import { ApiResponse, getSchemaPath } from '@nestjs/swagger';
 import { ResponseDto } from '../dtos/response.dto';
-import { PageOfDto } from '../dtos/page-of.dto';
+import { ListOfDto } from '../dtos/list-of.dto';
 
-export const ApiCustomPaginatedResponse = <MODEL extends Type>(
-  model: MODEL,
-) => {
+export const ApiCustomListedResponse = <MODEL extends Type>(model: MODEL) => {
   return applyDecorators(
     ApiResponse({
       schema: {
@@ -15,7 +13,7 @@ export const ApiCustomPaginatedResponse = <MODEL extends Type>(
             properties: {
               data: {
                 allOf: [
-                  { $ref: getSchemaPath(PageOfDto) },
+                  { $ref: getSchemaPath(ListOfDto) },
                   {
                     properties: {
                       list: {

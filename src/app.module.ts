@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PostModule } from './post/post.module';
-import { CommentModule } from './comment/comment.module';
-import { VoteModule } from './vote/vote.module';
+import { EventModule } from './event/event.module';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), UserModule, PostModule, CommentModule, VoteModule],
+  imports: [TypeOrmModule.forRoot(), UserModule, EventModule],
 })
 export class AppModule {}

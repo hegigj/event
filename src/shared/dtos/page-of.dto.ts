@@ -1,15 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { ListOfDto } from './list-of.dto';
 
-export class PageOfDto<MODEL> {
-  @ApiProperty()
-  list: MODEL[];
-
+export class PageOfDto<MODEL> extends ListOfDto<MODEL> {
   @ApiProperty()
   pageNo: number;
 
   @ApiProperty()
   pageSize: number;
-
-  @ApiProperty()
-  totalElements: number;
 }
