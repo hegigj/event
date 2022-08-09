@@ -10,7 +10,7 @@ export class CreateEventDto {
   @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
-  imageUrl: string;
+  status: string;
 
   @ApiProperty()
   @IsString()

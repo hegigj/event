@@ -29,7 +29,6 @@ export class EventService {
       const [posts, postCount] = await this.postRepository.findAndCount(
         filterPostDto,
       );
-
       return {
         list: posts,
         totalElements: postCount,
@@ -53,11 +52,11 @@ export class EventService {
   ): Promise<EventEntity> {
     const newPost: EventEntity = new EventEntity();
     const user: UserEntity = prepareUser(userDto);
-    const { title, imageUrl, start, end } = createPostDto;
+    const { title, status, start, end } = createPostDto;
 
     newPost.title = title;
-    if (imageUrl) {
-      newPost.imageUrl = imageUrl;
+    if (status) {
+      newPost.status = status;
     }
     newPost.start = start;
     newPost.end = end;
@@ -86,10 +85,10 @@ export class EventService {
         result: 'You can not modify a event made by someone else!',
       });
 
-    const { title, imageUrl, start, end } = editPostDto;
+    const { title, status, start, end } = editPostDto;
 
     post.title = title;
-    post.imageUrl = imageUrl;
+    post.status = status;
     post.start = start;
     post.end = end;
 

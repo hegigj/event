@@ -22,7 +22,7 @@ export class EventEntity extends BaseEntity {
 
   @ApiProperty()
   @Column({ nullable: true })
-  imageUrl: string;
+  status: string;
 
   @ApiProperty()
   @Column({ type: 'timestamp' })
@@ -41,6 +41,7 @@ export class EventEntity extends BaseEntity {
   @JoinTable()
   bookings: UserEntity[];
 
+//May change to set status
   @ApiProperty()
   bookCount: number;
 }

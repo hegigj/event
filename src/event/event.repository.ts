@@ -6,9 +6,14 @@ import {
 } from 'typeorm';
 import { EventEntity } from './event.entity';
 import { FilterEventDto } from './dto/filter-event.dto';
+import {Query} from "@nestjs/common";
 
 @EntityRepository(EventEntity)
 export class EventRepository extends Repository<EventEntity> {
+
+    // @Query(value = "SELECT * FROM public.event WHERE userId = ?1", nativeQuery =  true)
+    // EventEntity findEventByUserId(int userId)
+
   private async getPostAndSubEntities(): Promise<
     SelectQueryBuilder<EventEntity>
   > {
@@ -18,6 +23,7 @@ export class EventRepository extends Repository<EventEntity> {
         'event.title',
         'event.start',
         'event.end',
+        'event.status',
         'user.id',
         'user.firstName',
         'user.lastName',

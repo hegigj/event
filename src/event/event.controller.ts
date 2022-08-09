@@ -33,6 +33,7 @@ import { ListOfDto } from '../shared/dtos/list-of.dto';
 
 @ApiTags('Event')
 @ApiExtraModels(ResponseDto, PageOfDto, EventEntity)
+
 @Controller('event')
 export class EventController {
   constructor(private readonly postService: EventService) {}
