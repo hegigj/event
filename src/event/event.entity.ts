@@ -21,7 +21,7 @@ export class EventEntity extends BaseEntity {
   title: string;
 
   @ApiProperty()
-  @Column({ nullable: true })
+  @Column() // { nullable: true }
   status: string;
 
   @ApiProperty()

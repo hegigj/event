@@ -55,9 +55,9 @@ export class EventService {
     const { title, status, start, end } = createPostDto;
 
     newPost.title = title;
-    if (status) {
-      newPost.status = status;
-    }
+
+    newPost.status = status;
+
     newPost.start = start;
     newPost.end = end;
 

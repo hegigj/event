@@ -7,7 +7,7 @@ export class CreateEventDto {
   @IsNotEmpty()
   title: string;
 
-  @ApiProperty({ required: false })
+  @ApiProperty({ required: true })
   @IsString()
   @IsOptional()
   status: string;

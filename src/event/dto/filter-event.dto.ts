@@ -16,4 +16,9 @@ export class FilterEventDto {
   @IsString()
   @IsOptional()
   title?: string;
+
+  @ApiProperty({ required: true })
+  @IsString()
+  @IsOptional()
+  status?: string;
 }
